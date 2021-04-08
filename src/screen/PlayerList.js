@@ -1,18 +1,11 @@
 import React from "react";
 
-import { View, StyleSheet, Image, TouchableOpacity, Text, FlatList } from "react-native";
+import { View, StyleSheet, Image, TouchableOpacity, FlatList } from "react-native";
 
 import iconMenu from "../../assets/icon_menu.png"
+import ItemPlayer from "../components/ItemPlayer";
 
-
-function ItemPlayer ({ itemPlayer }) {
-    return(
-      <View style={styles.rowPlayer}>
-        <Image style={styles.imagePlayer} source={{uri:itemPlayer.image}}/>
-        <Text style={styles.titleStyle}>{itemPlayer.title}</Text>
-      </View>
-    );
-}    
+ 
 
 
   const dataPlayer= [
@@ -84,28 +77,8 @@ const styles = StyleSheet.create({
       alignItems: "flex-start",
       marginBottom: 10
     },
-    rowPlayer:{
-      borderWidth:2,
-      flexDirection: "row",
-      alignItems: "center",
-      marginBottom: 10,
-      borderRadius: 20,
-      backgroundColor: "#CECECE"
-    },
     iconMenu:{
       marginTop: 40,
       marginLeft: 20
-    },
-    imagePlayer:{
-      height: 100,
-      width: 100,
-      marginLeft: 20,
-      marginRight: 20
-    },
-    titleStyle:{
-      fontSize: 25,
-      color: "black",
-      marginTop: -10,
-      marginBottom: 10
     },
   })
