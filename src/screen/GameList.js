@@ -9,7 +9,7 @@ import TouchableDrawer from '../components/TouchableDrawer';
     const [dataGames, setDataGames] = useState([]);
     useEffect(() => {
       axios
-        .get('https://firestore.googleapis.com/v1/projects/mogareactapp/databases/(default)/documents/player')
+        .get('https://firestore.googleapis.com/v1/projects/mogareactapp/databases/(default)/documents/game')
         .then((res) => setDataGames(res.data.documents))
 
         // fetch('https://firestore.googleapis.com/v1/projects/mogareactapp/databases/(default)/documents/player')
