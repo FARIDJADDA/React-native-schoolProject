@@ -1,18 +1,10 @@
 import React from "react";
 
-import { View, StyleSheet, Image, TouchableOpacity, Text, FlatList } from "react-native";
+import { View, StyleSheet, Image, TouchableOpacity, FlatList } from "react-native";
 
 import iconMenu from "../../assets/icon_menu.png"
+import ItemGame from "../components/ItemGame";
 
-
-function ItemGame ({ itemGame }) {
-    return(
-      <View style={styles.rowGame}>
-        <Image style={styles.imageGame} source={{uri:itemGame.image}}/>
-        <Text style={styles.titleStyle}>{itemGame.title}</Text>
-      </View>
-    );
-}    
 
   const dataGames= [
     {
@@ -67,9 +59,6 @@ function ItemGame ({ itemGame }) {
     );
   }
 
-  
-  // ---------------------------- STYLE ----------------------------
-
 const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -82,28 +71,8 @@ const styles = StyleSheet.create({
       alignItems: "flex-start",
       marginBottom: 10
     },
-    rowGame:{
-      borderWidth:2,
-      flexDirection: "row",
-      alignItems: "center",
-      marginBottom: 10,
-      borderRadius: 20,
-      backgroundColor: "#CECECE"
-    },
     iconMenu:{
       marginTop: 40,
       marginLeft: 20
-    },
-    imageGame:{
-      height: 100,
-      width: 100,
-      marginLeft: 20,
-      marginRight: 20
-    },
-    titleStyle:{
-      fontSize: 25,
-      color: "black",
-      marginTop: -10,
-      marginBottom: 10
-    },
+    }
   })

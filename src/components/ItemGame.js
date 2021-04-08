@@ -1,18 +1,20 @@
 import React from "react";
 
-import { View, Image, Text, StyleSheet } from "react-native";
+import { View, StyleSheet, Image, Text} from "react-native";
 
-export default function ItemPlayer ({ itemPlayer }) {
+
+export default function ItemGame ({ itemGame }) {
     return(
-      <View style={styles.rowPlayer}>
-        <Image style={styles.imagePlayer} source={{uri:itemPlayer.image}}/>
-        <Text style={styles.titleStyle}>{itemPlayer.title}</Text>
+      <View style={styles.rowGame}>
+        <Image style={styles.imageGame} source={{uri:itemGame.image}}/>
+        <Text style={styles.titleStyle}>{itemGame.title}</Text>
       </View>
     );
-} 
+}  
+
 
 const styles = StyleSheet.create({
-    rowPlayer:{
+    rowGame:{
       borderWidth:2,
       flexDirection: "row",
       alignItems: "center",
@@ -20,7 +22,7 @@ const styles = StyleSheet.create({
       borderRadius: 20,
       backgroundColor: "#CECECE"
     },
-    imagePlayer:{
+    imageGame:{
       height: 100,
       width: 100,
       marginLeft: 20,
