@@ -1,25 +1,21 @@
 import React from "react";
-import {
-  View,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-  Text,
-  FlatList
-} from "react-native";
-import iconMenu from "../assets/icon_menu.png"
 
-function ItemJoueur ({ itemJoueur }) {
+import { View, StyleSheet, Image, TouchableOpacity, Text, FlatList } from "react-native";
+
+import iconMenu from "../../assets/icon_menu.png"
+
+
+function ItemPlayer ({ itemPlayer }) {
     return(
-      <View style={styles.rowJoueur}>
-        <Image style={styles.imageJoueur} source={{uri:itemJoueur.image}}/>
-        <Text style={styles.textTitre}>{itemJoueur.title}</Text>
+      <View style={styles.rowPlayer}>
+        <Image style={styles.imagePlayer} source={{uri:itemPlayer.image}}/>
+        <Text style={styles.titleStyle}>{itemPlayer.title}</Text>
       </View>
     );
 }    
 
 
-  const dataJoueur= [
+  const dataPlayer= [
     {
       "id": "0001",
       "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/userImage%2FmobingameAvatar1.png?alt=media&token=1a27e5f8-69f8-464c-8d42-1777a720a642",
@@ -53,8 +49,8 @@ function ItemJoueur ({ itemJoueur }) {
   ]
 
 
-  export default function ListeJoueur({ navigation }) {
-    const renderItem = ({ item }) => (<ItemJoueur itemJoueur={item} />
+  export default function PlayerList({ navigation }) {
+    const renderItem = ({ item }) => (<ItemPlayer itemPlayer={item} />
     );
     
     return (
@@ -65,9 +61,9 @@ function ItemJoueur ({ itemJoueur }) {
           </TouchableOpacity>
         </View>
           <FlatList
-            data={dataJoueur}
+            data={dataPlayer}
             renderItem={renderItem}
-            keyExtractor={itemJoueur => itemJoueur.id}
+            keyExtractor={itemPlayer => itemPlayer.id}
           />
       </View>
     );
@@ -88,7 +84,7 @@ const styles = StyleSheet.create({
       alignItems: "flex-start",
       marginBottom: 10
     },
-    rowJoueur:{
+    rowPlayer:{
       borderWidth:2,
       flexDirection: "row",
       alignItems: "center",
@@ -100,13 +96,13 @@ const styles = StyleSheet.create({
       marginTop: 40,
       marginLeft: 20
     },
-    imageJoueur:{
+    imagePlayer:{
       height: 100,
       width: 100,
       marginLeft: 20,
       marginRight: 20
     },
-    textTitre:{
+    titleStyle:{
       fontSize: 25,
       color: "black",
       marginTop: -10,

@@ -1,24 +1,20 @@
 import React from "react";
-import {
-  View,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-  Text,
-  FlatList
-} from "react-native";
-import iconMenu from "../assets/icon_menu.png"
 
-function ItemJeux ({ itemJeux }) {
+import { View, StyleSheet, Image, TouchableOpacity, Text, FlatList } from "react-native";
+
+import iconMenu from "../../assets/icon_menu.png"
+
+
+function ItemGame ({ itemGame }) {
     return(
-      <View style={styles.rowJeux}>
-        <Image style={styles.imageJeux} source={{uri:itemJeux.image}}/>
-        <Text style={styles.textTitre}>{itemJeux.title}</Text>
+      <View style={styles.rowGame}>
+        <Image style={styles.imageGame} source={{uri:itemGame.image}}/>
+        <Text style={styles.titleStyle}>{itemGame.title}</Text>
       </View>
     );
 }    
 
-  const dataJeux= [
+  const dataGames= [
     {
       "id": "0001",
       "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/gameImages%2FBrawl_Stars_logo.png?alt=media&token=55e1715c-3ae3-4b14-9b68-130004323ea9",
@@ -51,8 +47,8 @@ function ItemJeux ({ itemJeux }) {
     },
   ]
 
-  export default function ListeJeux({ navigation }) {
-    const renderItem = ({ item }) => (<ItemJeux itemJeux={item} />
+  export default function GameList({ navigation }) {
+    const renderItem = ({ item }) => (<ItemGame itemGame={item} />
     );
     
     return (
@@ -63,9 +59,9 @@ function ItemJeux ({ itemJeux }) {
           </TouchableOpacity>
         </View>
           <FlatList
-            data={dataJeux}
+            data={dataGames}
             renderItem={renderItem}
-            keyExtractor={itemJeux => itemJeux.id}
+            keyExtractor={itemGame => itemGame.id}
           />
       </View>
     );
@@ -86,7 +82,7 @@ const styles = StyleSheet.create({
       alignItems: "flex-start",
       marginBottom: 10
     },
-    rowJeux:{
+    rowGame:{
       borderWidth:2,
       flexDirection: "row",
       alignItems: "center",
@@ -98,13 +94,13 @@ const styles = StyleSheet.create({
       marginTop: 40,
       marginLeft: 20
     },
-    imageJeux:{
+    imageGame:{
       height: 100,
       width: 100,
       marginLeft: 20,
       marginRight: 20
     },
-    textTitre:{
+    titleStyle:{
       fontSize: 25,
       color: "black",
       marginTop: -10,

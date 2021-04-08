@@ -1,17 +1,12 @@
 import React from "react";
-import {
-  View,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-  Dimensions,
-  Text,
-  SafeAreaView} from "react-native";
-import iconMenu from "../assets/icon_menu.png"
-import logoMG from "../assets/logoMG.png"
+
+import { View, StyleSheet, Image, TouchableOpacity, Dimensions, Text, SafeAreaView } from "react-native";
+
+import iconMenu from "../../assets/icon_menu.png"
+import logoMG from "../../assets/logoMG.png"
 
 
-export default function Accueil({ navigation }) {
+export default function Home({ navigation }) {
     return (
       <SafeAreaView style={styles.container}>   
         <View style={styles.rowStart}> 
