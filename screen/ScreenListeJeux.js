@@ -9,11 +9,11 @@ import {
 } from "react-native";
 import iconMenu from "../assets/icon_menu.png"
 
-function Item ({ item }) {
+function Item ({ itemJeux }) {
     return(
       <View style={styles.rowJeux}>
-        <Image style={styles.imageJeux} source={{uri:item.image}}/>
-        <Text style={styles.textTitre}>{item.title}</Text>
+        <Image style={styles.imageJeux} source={{uri:itemJeux.image}}/>
+        <Text style={styles.textTitre}>{itemJeux.title}</Text>
       </View>
     );
 }    
@@ -54,7 +54,7 @@ state = {
 }
 
   export default function ListeJeux({ navigation }) {
-    const renderItem = ({ item }) => (<Item item={item} />
+    const renderItem = ({ item }) => (<Item itemJeux={item} />
     );
     
     return (
