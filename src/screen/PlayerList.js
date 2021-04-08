@@ -25,11 +25,7 @@ import axios from 'axios';
     
     return (
       <View style={styles.container}>   
-        <View style={styles.rowStart}> 
-          <TouchableOpacity onPress={() => navigation.openDrawer()}>
-            <Image source={iconMenu} style={styles.iconMenu} />
-          </TouchableOpacity>
-        </View>
+        <TouchableDrawer navigation={navigation}/>
           <FlatList
             data={dataPlayer}
             renderItem={renderItem}
@@ -47,12 +43,6 @@ const styles = StyleSheet.create({
       flex: 1,
       display: "flex",
       backgroundColor: "#7F7F7F"
-    },
-    rowStart:{
-      flexDirection: "row",
-      justifyContent: "flex-start",
-      alignItems: "flex-start",
-      marginBottom: 10
     },
     iconMenu:{
       marginTop: 40,

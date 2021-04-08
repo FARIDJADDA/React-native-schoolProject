@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, Image, TouchableOpacity, FlatList } from "react-native";
-
-import iconMenu from "../../assets/icon_menu.png"
+import { View, StyleSheet,FlatList } from "react-native";
 import ItemGame from "../components/ItemGame";
 import axios from 'axios';
+import TouchableDrawer from '../components/TouchableDrawer';
 
   export default function GameList({ navigation }) {
 
@@ -24,11 +23,7 @@ import axios from 'axios';
     
     return (
       <View style={styles.container}>   
-        <View style={styles.rowStart}> 
-          <TouchableOpacity onPress={() => navigation.openDrawer()}>
-            <Image source={iconMenu} style={styles.iconMenu} />
-          </TouchableOpacity>
-        </View>
+        <TouchableDrawer navigation={navigation}/>
           <FlatList
             data={dataGames}
             renderItem={renderItem}
@@ -43,12 +38,6 @@ const styles = StyleSheet.create({
       flex: 1,
       display: "flex",
       backgroundColor: "#7F7F7F"
-    },
-    rowStart:{
-      flexDirection: "row",
-      justifyContent: "flex-start",
-      alignItems: "flex-start",
-      marginBottom: 10
     },
     iconMenu:{
       marginTop: 40,
