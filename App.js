@@ -14,7 +14,7 @@ import ScreenListJeux from "./screen/ScreenListeJeux"
   
   function MyDrawer() {
     return (
-      <Drawer.Navigator>
+      <Drawer.Navigator initialRouteName="Accueil">
         <Drawer.Screen name="Accueil" component={ScreenAccueil} />
         <Drawer.Screen name="Liste des joueurs" component={ScreenListJoueur} />
         <Drawer.Screen name="Liste des jeux" component={ScreenListJeux} />

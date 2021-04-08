@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import iconMenu from "../assets/icon_menu.png"
 
-function Item ({ itemJeux }) {
+function ItemJeux ({ itemJeux }) {
     return(
       <View style={styles.rowJeux}>
         <Image style={styles.imageJeux} source={{uri:itemJeux.image}}/>
@@ -18,8 +18,7 @@ function Item ({ itemJeux }) {
     );
 }    
 
-state = {
-  data: [
+  const dataJeux= [
     {
       "id": "0001",
       "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/gameImages%2FBrawl_Stars_logo.png?alt=media&token=55e1715c-3ae3-4b14-9b68-130004323ea9",
@@ -51,10 +50,9 @@ state = {
       "title": "Brawl Stars",
     },
   ]
-}
 
   export default function ListeJeux({ navigation }) {
-    const renderItem = ({ item }) => (<Item itemJeux={item} />
+    const renderItem = ({ item }) => (<ItemJeux itemJeux={item} />
     );
     
     return (
@@ -65,9 +63,9 @@ state = {
           </TouchableOpacity>
         </View>
           <FlatList
-            data={state.data}
+            data={dataJeux}
             renderItem={renderItem}
-            keyExtractor={item => item.id}
+            keyExtractor={itemJeux => itemJeux.id}
           />
       </View>
     );
