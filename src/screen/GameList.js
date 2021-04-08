@@ -1,45 +1,24 @@
-import React from "react";
-
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Image, TouchableOpacity, FlatList } from "react-native";
 
 import iconMenu from "../../assets/icon_menu.png"
 import ItemGame from "../components/ItemGame";
-
-
-  const dataGames= [
-    {
-      "id": "0001",
-      "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/gameImages%2FBrawl_Stars_logo.png?alt=media&token=55e1715c-3ae3-4b14-9b68-130004323ea9",
-      "title": "Brawl Stars",
-    },
-    {
-      "id": "0002",
-      "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/gameImages%2FBrawl_Stars_logo.png?alt=media&token=55e1715c-3ae3-4b14-9b68-130004323ea9",
-      "title": "Brawl Stars",
-    },
-    {
-      "id": "0003",
-      "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/gameImages%2FBrawl_Stars_logo.png?alt=media&token=55e1715c-3ae3-4b14-9b68-130004323ea9",
-      "title": "Brawl Stars",
-    },
-    {
-      "id": "0004",
-      "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/gameImages%2FBrawl_Stars_logo.png?alt=media&token=55e1715c-3ae3-4b14-9b68-130004323ea9",
-      "title": "Brawl Stars",
-    },
-    {
-      "id": "0005",
-      "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/gameImages%2FBrawl_Stars_logo.png?alt=media&token=55e1715c-3ae3-4b14-9b68-130004323ea9",
-      "title": "Brawl Stars",
-    },
-    {
-      "id": "0006",
-      "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/gameImages%2FBrawl_Stars_logo.png?alt=media&token=55e1715c-3ae3-4b14-9b68-130004323ea9",
-      "title": "Brawl Stars",
-    },
-  ]
+import axios from 'axios';
 
   export default function GameList({ navigation }) {
+
+    const [dataGames, setDataGames] = useState([]);
+    useEffect(() => {
+      axios
+        .get('https://firestore.googleapis.com/v1/projects/mogareactapp/databases/(default)/documents/player')
+        .then((res) => setDataGames(res.data.documents))
+
+        // fetch('https://firestore.googleapis.com/v1/projects/mogareactapp/databases/(default)/documents/player')
+        // .then((response) => response.json())
+        // .then((json) => setDataGames(json.documents))
+        
+    }, []);
+
     const renderItem = ({ item }) => (<ItemGame itemGame={item} />
     );
     

@@ -1,48 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 
 import { View, StyleSheet, Image, TouchableOpacity, FlatList } from "react-native";
 
 import iconMenu from "../../assets/icon_menu.png"
 import ItemPlayer from "../components/ItemPlayer";
-
- 
-
-
-  const dataPlayer= [
-    {
-      "id": "0001",
-      "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/userImage%2FmobingameAvatar1.png?alt=media&token=1a27e5f8-69f8-464c-8d42-1777a720a642",
-      "title": "DMDProd",
-    },
-    {
-      "id": "0002",
-      "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/userImage%2FmobingameAvatar1.png?alt=media&token=1a27e5f8-69f8-464c-8d42-1777a720a642",
-      "title": "Farid",
-    },
-    {
-      "id": "0003",
-      "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/userImage%2FmobingameAvatar1.png?alt=media&token=1a27e5f8-69f8-464c-8d42-1777a720a642",
-      "title": "Rokenson",
-    },
-    {
-      "id": "0004",
-      "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/userImage%2FmobingameAvatar1.png?alt=media&token=1a27e5f8-69f8-464c-8d42-1777a720a642",
-      "title": "Tiffany",
-    },
-    {
-      "id": "0005",
-      "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/userImage%2FmobingameAvatar1.png?alt=media&token=1a27e5f8-69f8-464c-8d42-1777a720a642",
-      "title": "Tiffany",
-    },
-    {
-      "id": "0006",
-      "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/userImage%2FmobingameAvatar1.png?alt=media&token=1a27e5f8-69f8-464c-8d42-1777a720a642",
-      "title": "Tiffany",
-    },
-  ]
-
+import axios from 'axios';
 
   export default function PlayerList({ navigation }) {
+
+    const [dataPlayer, setDataPlayer] = useState([]);
+    useEffect(() => {
+      axios
+        .get('https://firestore.googleapis.com/v1/projects/mogareactapp/databases/(default)/documents/player')
+        .then((res) => setDataPlayer(res.data.documents))
+
+        // fetch('https://firestore.googleapis.com/v1/projects/mogareactapp/databases/(default)/documents/player')
+        // .then((response) => response.json())
+        // .then((json) => setDataPlayer(json.documents))
+        
+    }, []);
+
     const renderItem = ({ item }) => (<ItemPlayer itemPlayer={item} />
     );
     
