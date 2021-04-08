@@ -5,6 +5,7 @@ import { View, StyleSheet, Image, TouchableOpacity, FlatList } from "react-nativ
 import iconMenu from "../../assets/icon_menu.png"
 import ItemPlayer from "../components/ItemPlayer";
 import axios from 'axios';
+import TouchableDrawer from '../components/TouchableDrawer';
 
   export default function PlayerList({ navigation }) {
 
