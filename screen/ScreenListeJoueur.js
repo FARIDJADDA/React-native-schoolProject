@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import iconMenu from "../assets/icon_menu.png"
 
-function Item ({ itemJoueur }) {
+function ItemJoueur ({ itemJoueur }) {
     return(
       <View style={styles.rowJoueur}>
         <Image style={styles.imageJoueur} source={{uri:itemJoueur.image}}/>
@@ -18,8 +18,8 @@ function Item ({ itemJoueur }) {
     );
 }    
 
-state = {
-  data: [
+
+  const dataJoueur= [
     {
       "id": "0001",
       "image": "https://firebasestorage.googleapis.com/v0/b/moga-61d86.appspot.com/o/userImage%2FmobingameAvatar1.png?alt=media&token=1a27e5f8-69f8-464c-8d42-1777a720a642",
@@ -51,10 +51,10 @@ state = {
       "title": "Tiffany",
     },
   ]
-}
+
 
   export default function ListeJoueur({ navigation }) {
-    const renderItem = ({ item }) => (<Item itemJoueur={item} />
+    const renderItem = ({ item }) => (<ItemJoueur itemJoueur={item} />
     );
     
     return (
@@ -65,9 +65,9 @@ state = {
           </TouchableOpacity>
         </View>
           <FlatList
-            data={state.data}
+            data={dataJoueur}
             renderItem={renderItem}
-            keyExtractor={item => item.id}
+            keyExtractor={itemJoueur => itemJoueur.id}
           />
       </View>
     );
