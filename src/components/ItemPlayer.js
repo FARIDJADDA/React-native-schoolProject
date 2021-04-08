@@ -5,8 +5,8 @@ import { View, Image, Text, StyleSheet } from "react-native";
 export default function ItemPlayer ({ itemPlayer }) {
     return(
       <View style={styles.rowPlayer}>
-        <Image style={styles.imagePlayer} source={{uri:itemPlayer.image}}/>
-        <Text style={styles.titleStyle}>{itemPlayer.title}</Text>
+        <Image style={styles.imagePlayer} source={{uri:itemPlayer.fields.image.stringValue}}/>
+        <Text style={styles.titleStyle}>{itemPlayer.fields.name.stringValue}</Text>
       </View>
     );
 } 

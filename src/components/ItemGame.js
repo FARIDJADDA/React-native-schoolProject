@@ -6,8 +6,8 @@ import { View, StyleSheet, Image, Text} from "react-native";
 export default function ItemGame ({ itemGame }) {
     return(
       <View style={styles.rowGame}>
-        <Image style={styles.imageGame} source={{uri:itemGame.image}}/>
-        <Text style={styles.titleStyle}>{itemGame.title}</Text>
+        <Image style={styles.imageGame} source={{uri:itemGame.fields.image.stringValue}}/>
+        <Text style={styles.titleStyle}>{itemGame.fields.name.stringValue}</Text>
       </View>
     );
 }  
