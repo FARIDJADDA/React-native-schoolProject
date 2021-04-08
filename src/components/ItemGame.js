@@ -1,17 +1,21 @@
 import React from "react";
 
-import { View, StyleSheet, Image, Text} from "react-native";
+import { View, StyleSheet, Image, Text, Pressable, Alert} from "react-native";
+import AlertDisplay from "./AlertDisplay"
 
 
 export default function ItemGame ({ itemGame }) {
-    return(
-      <View style={styles.rowGame}>
+  
+  return(
+  <Pressable style={[styles.button, styles.buttonOpen]} onPress={() => AlertDisplay(itemGame)}>
+  <AlertDisplay/>
+    <View style={styles.rowGame}>
         <Image style={styles.imageGame} source={{uri:itemGame.fields.image.stringValue}}/>
         <Text style={styles.titleStyle}>{itemGame.fields.name.stringValue}</Text>
-      </View>
+    </View>
+  </Pressable>
     );
 }  
-
 
 const styles = StyleSheet.create({
     rowGame:{
