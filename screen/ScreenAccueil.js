@@ -5,14 +5,15 @@ import {
   Image,
   TouchableOpacity,
   Dimensions,
-  Text} from "react-native";
+  Text,
+  SafeAreaView} from "react-native";
 import iconMenu from "../assets/icon_menu.png"
 import logoMG from "../assets/logoMG.png"
 
 
 export default function Accueil({ navigation }) {
     return (
-      <View style={styles.container}>   
+      <SafeAreaView style={styles.container}>   
         <View style={styles.rowStart}> 
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
             <Image source={iconMenu} style={styles.iconMenu}/>
@@ -27,7 +28,7 @@ export default function Accueil({ navigation }) {
         <View style={styles.rowCenter}>
           <Text style={styles.textDescription}>Pour accéder à la liste des joueurs et des jeux, cliquez sur le menu en haut à gauche ou glissez votre doigt de gauche à droite</Text>
         </View>
-      </View>
+      </SafeAreaView>
     );
   }
 
