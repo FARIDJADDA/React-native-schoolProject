@@ -2,7 +2,7 @@ import React from "react";
 
 import { View, StyleSheet, Image, TouchableOpacity, Dimensions, Text, SafeAreaView } from "react-native";
 
-import iconMenu from "../../assets/icon_menu.png"
+import iconMenu from "../../assets/hamburger.png"
 import logoMG from "../../assets/logoMG.png"
 
 
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       display: "flex",
-      backgroundColor: "#7F7F7F"
+      backgroundColor: "#555252"
     },
     rowStart:{
       flexDirection: "row",
@@ -49,21 +49,26 @@ const styles = StyleSheet.create({
     },
     iconMenu:{
       marginTop: 40,
-      marginLeft: 20
+      marginLeft: 1,
+      width: Dimensions.get("window").width-270,
+      height:Dimensions.get("window").height-650
     },
     imageLogoMG:{
-      width: Dimensions.get("window").width-250,
-      height:Dimensions.get("window").height-450
+      width: Dimensions.get("window").width-200,
+      height:Dimensions.get("window").height-450,
+      marginLeft: 29
     },
     textTitre:{
       fontSize: 25,
-      color: "black",
+      color: "white",
       marginTop: -10,
-      marginBottom: 10
+      marginBottom: 10,
+      fontStyle: "italic",
+      fontWeight: "bold"
     },
     textDescription:{
       fontSize: 18,
-      color: "black",
+      color: "white",
       textAlign: "center",
     }
   })

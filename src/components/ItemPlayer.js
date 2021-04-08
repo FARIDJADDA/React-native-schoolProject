@@ -13,7 +13,6 @@ export default function ItemPlayer ({ itemPlayer }) {
 
 const styles = StyleSheet.create({
     rowPlayer:{
-      borderWidth:2,
       flexDirection: "row",
       alignItems: "center",
       marginBottom: 10,
@@ -24,10 +23,12 @@ const styles = StyleSheet.create({
       height: 100,
       width: 100,
       marginLeft: 20,
-      marginRight: 20
+      marginRight: 20,
+      marginTop: 5,
+      marginBottom: 5
     },
     titleStyle:{
-      fontSize: 25,
+      fontSize: 20,
       color: "black",
       marginTop: -10,
       marginBottom: 10

@@ -24,7 +24,7 @@ import TouchableDrawer from '../components/TouchableDrawer';
     return (
       <View style={styles.container}>   
         <TouchableDrawer navigation={navigation}/>
-          <FlatList
+          <FlatList style={styles.card}
             data={dataGames}
             renderItem={renderItem}
             keyExtractor={itemGame => itemGame.id}
@@ -42,5 +42,8 @@ const styles = StyleSheet.create({
     iconMenu:{
       marginTop: 40,
       marginLeft: 20
+    },
+    card: {
+      margin: 17
     }
   })
