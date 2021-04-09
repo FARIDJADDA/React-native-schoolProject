@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import { View, StyleSheet, Image, TouchableOpacity, FlatList } from "react-native";
+import { View, StyleSheet, FlatList } from "react-native";
 
-import iconMenu from "../../assets/icon_menu.png"
 import ItemPlayer from "../components/ItemPlayer";
 import axios from 'axios';
 import TouchableDrawer from '../components/TouchableDrawer';
@@ -27,7 +26,7 @@ import TouchableDrawer from '../components/TouchableDrawer';
     return (
       <View style={styles.container}>   
         <TouchableDrawer navigation={navigation}/>
-          <FlatList
+          <FlatList style={styles.card}
             data={dataPlayer}
             renderItem={renderItem}
             keyExtractor={itemPlayer => itemPlayer.id}
@@ -43,10 +42,9 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       display: "flex",
-      backgroundColor: "#7F7F7F"
+      backgroundColor:  "#7F7F7F"
     },
-    iconMenu:{
-      marginTop: 40,
-      marginLeft: 20
-    },
+    card: {
+      margin: 17
+    }
   })
