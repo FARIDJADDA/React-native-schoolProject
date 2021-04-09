@@ -48,14 +48,12 @@ const styles = StyleSheet.create({
       marginBottom: 10
     },
     iconMenu:{
-      marginTop: 40,
-      marginLeft: 1,
-      width: Dimensions.get("window").width-270,
-      height:Dimensions.get("window").height-650
+      marginTop: 25,
+      marginLeft: 10,
+      width: 60,
+      height:60
     },
     imageLogoMG:{
-      width: Dimensions.get("window").width-200,
-      height:Dimensions.get("window").height-450,
       marginLeft: 29
     },
     textTitre:{
