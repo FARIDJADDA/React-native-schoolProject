@@ -20,18 +20,18 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     marginBottom: 6,
     backgroundColor: "#525252",
-    paddingBottom: 12
+    paddingBottom: 19
   },
   iconMenu:{
-    marginTop: 30,
-    marginLeft: 1,
-    width: Dimensions.get("window").width-280,
-    height:Dimensions.get("window").height-659
+    marginTop: 25,
+    marginLeft: 10,
+    width: 60,
+    height:60
   },
   text:{
     textAlign: "center",
-    marginLeft: 130,
-    marginTop: -35,
+    marginLeft: 133,
+    marginTop: -45,
     color: "white",
     fontSize: 23,
     fontStyle: "italic",
