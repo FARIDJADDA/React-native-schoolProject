@@ -30,7 +30,7 @@ import TouchableDrawer from '../components/TouchableDrawer';
           <FlatList style={styles.card}
             data={dataPlayer}
             renderItem={renderItem}
-            keyExtractor={itemPlayer => itemPlayer.id}
+            keyExtractor={itemPlayer => itemPlayer.fields.id.stringValue}
           />
       </View>
     );

@@ -28,7 +28,7 @@ import TouchableDrawer from '../components/TouchableDrawer';
           <FlatList style={styles.card}
             data={dataGames}
             renderItem={renderItem}
-            keyExtractor={itemGame => itemGame.id}
+            keyExtractor={itemGame => itemGame.fields.id.stringValue}
           />
       </View>
     );
