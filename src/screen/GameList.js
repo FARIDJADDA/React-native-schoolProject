@@ -16,7 +16,7 @@ import axios from 'axios';
         .get('https://firestore.googleapis.com/v1/projects/mogareactapp/databases/(default)/documents/game')
         .then((res) => setDataGames(res.data.documents))
 
-        // fetch('https://firestore.googleapis.com/v1/projects/mogareactapp/databases/(default)/documents/player')
+        // fetch('https://firestore.googleapis.com/v1/projects/mogareactapp/databases/(default)/documents/game')
         // .then((response) => response.json())
         // .then((json) => setDataGames(json.documents))
         

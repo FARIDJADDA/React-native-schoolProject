@@ -9,7 +9,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-    <StatusBar backgroundColor="#2DA32D"/>
+      <StatusBar backgroundColor="#2DA32D"/>
       <MyDrawer />
     </NavigationContainer>
   );
