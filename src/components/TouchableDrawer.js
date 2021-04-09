@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     paddingBottom: 19
   },
   iconMenu:{
-    marginTop: 50,
+    marginTop: 10,
     marginLeft: 10,
     width: 60,
     height:60

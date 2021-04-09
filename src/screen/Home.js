@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
       marginBottom: 10
     },
     iconMenu:{
-      marginTop: 30,
+      marginTop: 10,
       marginLeft: 10,
       width: 60,
       height:60
