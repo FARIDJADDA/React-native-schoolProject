@@ -2,6 +2,8 @@ import React from 'react'
 import { View, StyleSheet, Image, TouchableOpacity, Dimensions, Text} from "react-native";
 import iconMenu from "../../assets/hamburger.png"
 
+const SCREEN_WIDTH = Dimensions.get("window").width;
+
 export default function TouchableDrawer({ navigation }){
         return (
           <View style={styles.rowStart}>
@@ -23,10 +25,13 @@ const styles = StyleSheet.create({
     paddingBottom: 12
   },
   iconMenu:{
-    marginTop: 30,
-    marginLeft: 1,
+    marginTop: 50,
+    marginLeft: 5,
     width: Dimensions.get("window").width-280,
-    height:Dimensions.get("window").height-659
+    height:Dimensions.get("window").height-659,
+    height: SCREEN_WIDTH * 0.1,
+    width: SCREEN_WIDTH * 0.1,
+    
   },
   text:{
     textAlign: "center",

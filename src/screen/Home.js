@@ -5,6 +5,9 @@ import { View, StyleSheet, Image, TouchableOpacity, Dimensions, Text, SafeAreaVi
 import iconMenu from "../../assets/hamburger.png"
 import logoMG from "../../assets/logoMG.png"
 
+const SCREEN_WIDTH = Dimensions.get("window").width;
+
+
 
 export default function Home({ navigation }) {
     return (
@@ -51,7 +54,9 @@ const styles = StyleSheet.create({
       marginTop: 40,
       marginLeft: 1,
       width: Dimensions.get("window").width-270,
-      height:Dimensions.get("window").height-650
+      height:Dimensions.get("window").height-650,
+      height: SCREEN_WIDTH * 0.1,
+      width: SCREEN_WIDTH * 0.1,
     },
     imageLogoMG:{
       width: Dimensions.get("window").width-200,
