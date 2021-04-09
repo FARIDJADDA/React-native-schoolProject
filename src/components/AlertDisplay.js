@@ -1,7 +1,26 @@
 import React, { useState } from "react";
-import { Alert, Modal, StyleSheet, Text, Pressable, View, Image } from "react-native";
+import { Alert, Modal, StyleSheet, Text, Pressable, View, Image, Button, Share } from "react-native";
 
 const AlertDisplay = ({test, itemGame, close}) => {
+  const onShare = async () => {
+    try {
+      const result = await Share.share({
+        message:itemGame.fields.image.stringValue,
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   return (
     <View>
     <Modal
@@ -24,6 +43,12 @@ const AlertDisplay = ({test, itemGame, close}) => {
             >
               <Text style={styles.textStyle}>Fermer</Text>
             </Pressable>
+            <Pressable
+              style={[styles.buttonShare, styles.buttonCloseShare]}
+              onPress={onShare}
+            >
+              <Text style={styles.textStyle}>Partager</Text>
+            </Pressable>
           </View>
         </View>
       </Modal>
@@ -37,6 +62,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: 22
+  },
+  buttonShare: {
+    borderRadius: 30,
+    padding: 20,
+    elevation: 2,
+    marginTop:10
+  },
+  buttonCloseShare: {
+    backgroundColor: "#525252",
   },
   modalView: {
     margin: 20,
