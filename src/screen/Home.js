@@ -1,6 +1,6 @@
 import React from "react";
 
-import { View, StyleSheet, Image, TouchableOpacity, Dimensions, Text, SafeAreaView } from "react-native";
+import { View, StyleSheet, Image, TouchableOpacity, Dimensions, Text, SafeAreaView, StatusBar } from "react-native";
 
 import iconMenu from "../../assets/hamburger.png"
 import logoMG from "../../assets/logoMG.png"
@@ -8,7 +8,8 @@ import logoMG from "../../assets/logoMG.png"
 
 export default function Home({ navigation }) {
     return (
-      <SafeAreaView style={styles.container}>   
+      <SafeAreaView style={styles.container}>  
+      <StatusBar backgroundColor="#2DA32D"/> 
         <View style={styles.rowStart}> 
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
             <Image source={iconMenu} style={styles.iconMenu}/>

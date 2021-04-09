@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-import { View, StyleSheet, Image, Text} from "react-native";
+import { View, StyleSheet, Image, Text, Pressable, Alert} from "react-native";
+import AlertDisplay from "./AlertDisplay"
 
 
 export default function ItemGame ({ itemGame }) {
-    return(
-      <View style={styles.rowGame}>
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const close = () =>{
+    setModalVisible(false)
+  }
+
+  return(
+  <Pressable style={[styles.button, styles.buttonOpen]} onPress={() => setModalVisible(true)}>
+  <AlertDisplay test={modalVisible} itemGame={itemGame} close={close}/>
+    <View style={styles.rowGame}>
         <Image style={styles.imageGame} source={{uri:itemGame.fields.image.stringValue}}/>
         <Text style={styles.titleStyle}>{itemGame.fields.name.stringValue}</Text>
-      </View>
+    </View>
+  </Pressable>
     );
 }  
-
 
 const styles = StyleSheet.create({
     rowGame:{
