@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
       marginBottom: 10
     },
     iconMenu:{
-      marginTop: 25,
+      marginTop: 30,
       marginLeft: 10,
       width: 60,
       height:60
