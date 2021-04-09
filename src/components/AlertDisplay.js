@@ -1,25 +1,26 @@
 import React, { useState } from "react";
-import { Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
+import { Alert, Modal, StyleSheet, Text, Pressable, View, Image } from "react-native";
 
-const AlertDisplay = () => {
-  const [modalVisible, setModalVisible] = useState(false);
+const AlertDisplay = ({test, itemGame, close}) => {
   return (
     <View>
     <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={test}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          
         }}
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World!</Text>
+          <Image style={styles.imageGame} source={{uri:itemGame.fields.image.stringValue}}/>
+        <Text style={styles.titleStyle}>{itemGame.fields.name.stringValue}</Text>
+        <Text style={styles.titleStyle}>{itemGame.fields.description.stringValue}</Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => close()}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </Pressable>
@@ -71,7 +72,19 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: "center"
-  }
+  },
+  imageGame:{
+      height: 100,
+      width: 100,
+      marginLeft: 20,
+      marginRight: 20
+    },
+    titleStyle:{
+      fontSize: 25,
+      color: "black",
+      marginTop: 10,
+      marginBottom: 10
+    },
 });
 
 export default AlertDisplay
