@@ -1,6 +1,9 @@
 import React from 'react'
+
 import { View, StyleSheet, Image, TouchableOpacity, Dimensions, Text} from "react-native";
+
 import iconMenu from "../../assets/hamburger.png"
+
 
 export default function TouchableDrawer({ navigation }){
         return (

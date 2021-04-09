@@ -9,26 +9,27 @@ import logoMG from "../../assets/logoMG.png"
 export default function Home({ navigation }) {
     return (
       <SafeAreaView style={styles.container}>  
-      <StatusBar backgroundColor="#2DA32D"/> 
-        <View style={styles.rowStart}> 
-          <TouchableOpacity onPress={() => navigation.openDrawer()}>
-            <Image source={iconMenu} style={styles.iconMenu}/>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.rowCenter}>
-          <Image style={styles.imageLogoMG} source={logoMG}/>
-        </View>
-        <View style={styles.rowCenter}>
-          <Text style={styles.textTitre}>MobinGame</Text>
-        </View>
-        <View style={styles.rowCenter}>
-          <Text style={styles.textDescription}>Pour accéder à la liste des joueurs et des jeux, cliquez sur le menu en haut à gauche ou glissez votre doigt de gauche à droite</Text>
-        </View>
+        <StatusBar backgroundColor="#2DA32D" /> 
+          <View style={styles.rowStart}> 
+            <TouchableOpacity onPress={() => navigation.openDrawer()}>
+              <Image source={iconMenu} style={styles.iconMenu} />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.rowCenter}>
+            <Image style={styles.imageLogoMG} source={logoMG} />
+          </View>
+          <View style={styles.rowCenter}>
+            <Text style={styles.textTitre}>MobinGame</Text>
+          </View>
+          <View style={styles.rowCenter}>
+            <Text style={styles.textDescription}>
+              Pour accéder à la liste des joueurs et des jeux, cliquez sur le menu en haut à gauche ou glissez votre doigt de gauche à droite
+            </Text>
+          </View>
       </SafeAreaView>
     );
   }
 
-  // ---------------------------- STYLE ----------------------------
 
 const styles = StyleSheet.create({
     container: {

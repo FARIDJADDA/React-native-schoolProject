@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+
 import { View, StyleSheet,FlatList, StatusBar } from "react-native";
+
 import ItemGame from "../components/ItemGame";
-import axios from 'axios';
 import TouchableDrawer from '../components/TouchableDrawer';
+
+import axios from 'axios';
+
 
   export default function GameList({ navigation }) {
 
@@ -39,10 +43,6 @@ const styles = StyleSheet.create({
       flex: 1,
       display: "flex",
       backgroundColor: "#7F7F7F"
-    },
-    iconMenu:{
-      marginTop: 40,
-      marginLeft: 20
     },
     card: {
       margin: 17

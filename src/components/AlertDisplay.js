@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Alert, Modal, StyleSheet, Text, Pressable, View, Image, Button, Share } from "react-native";
+import React from "react";
+
+import { Alert, Modal, StyleSheet, Text, Pressable, View, Image, Share } from "react-native";
 
 const AlertDisplay = ({test, itemGame, close}) => {
   const onShare = async () => {
@@ -44,7 +45,7 @@ const AlertDisplay = ({test, itemGame, close}) => {
               <Text style={styles.textStyle}>Fermer</Text>
             </Pressable>
             <Pressable
-              style={[styles.buttonShare, styles.buttonCloseShare]}
+              style={[styles.button, styles.buttonClose]}
               onPress={onShare}
             >
               <Text style={styles.textStyle}>Partager</Text>
@@ -63,15 +64,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 22
   },
-  buttonShare: {
-    borderRadius: 30,
-    padding: 20,
-    elevation: 2,
-    marginTop:10
-  },
-  buttonCloseShare: {
-    backgroundColor: "#525252",
-  },
   modalView: {
     margin: 20,
     backgroundColor: "white",
@@ -88,6 +80,7 @@ const styles = StyleSheet.create({
     elevation: 5
   },
   button: {
+    marginBottom: 10,
     borderRadius: 30,
     padding: 20,
     elevation: 2,
@@ -105,10 +98,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
     marginBottom: 20
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: "center"
   },
   imageGame:{
       height: 100,
