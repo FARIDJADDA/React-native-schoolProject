@@ -5467,6 +5467,11 @@
   "resolved" "https://registry.npmjs.org/react-native-screens/-/react-native-screens-3.0.0.tgz"
   "version" "3.0.0"
 
+"react-native-share@^5.2.0":
+  "integrity" "sha512-pPXiczgLVUp/RyxdLsQ6oBW2atmuMaTIAnh7/gzGvcCPLPavFViih5QsAFtfljCNEHah4jRXDbM3aAsttCY2sw=="
+  "resolved" "https://registry.npmjs.org/react-native-share/-/react-native-share-5.2.0.tgz"
+  "version" "5.2.0"
+
 "react-native-web@~0.13.12", "react-native-web@~0.13.7":
   "integrity" "sha512-WR/0ECAmwLQ2+2cL2Ur+0/swXFAtcSM0URoADJmG6D4MnY+wGc91JO8LoOTlgY0USBOY+qG/beRrjFa+RAuOiA=="
   "resolved" "https://registry.npmjs.org/react-native-web/-/react-native-web-0.13.18.tgz"
