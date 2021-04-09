@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet,FlatList } from "react-native";
+import { View, StyleSheet,FlatList, StatusBar } from "react-native";
 import ItemGame from "../components/ItemGame";
 import axios from 'axios';
 import TouchableDrawer from '../components/TouchableDrawer';
@@ -22,7 +22,8 @@ import TouchableDrawer from '../components/TouchableDrawer';
     );
     
     return (
-      <View style={styles.container}>   
+      <View style={styles.container}>  
+      <StatusBar backgroundColor="#2DA32D"/> 
         <TouchableDrawer navigation={navigation}/>
           <FlatList style={styles.card}
             data={dataGames}
