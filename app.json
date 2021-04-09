@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Mobin'React",
+    "slug": "Mobin'React",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/mogareact.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#36393f"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/mogareact.png",
+        "backgroundColor": "#36393f"
+      }
+    },
+    "web": {
+      "favicon": "./assets/mogareact.png"
+    }
+  }
+}
