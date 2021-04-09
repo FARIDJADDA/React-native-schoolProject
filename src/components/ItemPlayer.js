@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { View, Image, Text, StyleSheet, Pressable, } from "react-native";
+
 import AlertDisplay from "./AlertDisplay"
+
 
 export default function ItemPlayer ({ itemPlayer }) {
   const [modalVisible, setModalVisible] = useState(false);

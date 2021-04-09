@@ -3,8 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, FlatList,StatusBar } from "react-native";
 
 import ItemPlayer from "../components/ItemPlayer";
-import axios from 'axios';
 import TouchableDrawer from '../components/TouchableDrawer';
+
+import axios from 'axios';
+
 
   export default function PlayerList({ navigation }) {
 
@@ -25,19 +27,16 @@ import TouchableDrawer from '../components/TouchableDrawer';
     
     return (
       <View style={styles.container}>   
-      <StatusBar backgroundColor="#2DA32D"/>
-        <TouchableDrawer navigation={navigation}/>
-          <FlatList style={styles.card}
-            data={dataPlayer}
-            renderItem={renderItem}
-            keyExtractor={itemPlayer => itemPlayer.fields.id.stringValue}
-          />
+        <StatusBar backgroundColor="#2DA32D"/>
+          <TouchableDrawer navigation={navigation}/>
+            <FlatList style={styles.card}
+              data={dataPlayer}
+              renderItem={renderItem}
+              keyExtractor={itemPlayer => itemPlayer.fields.id.stringValue} />
       </View>
     );
   }
 
-  
-  // ---------------------------- STYLE ----------------------------
 
 const styles = StyleSheet.create({
     container: {
