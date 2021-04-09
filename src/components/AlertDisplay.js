@@ -17,12 +17,12 @@ const AlertDisplay = ({test, itemGame, close}) => {
           <View style={styles.modalView}>
           <Image style={styles.imageGame} source={{uri:itemGame.fields.image.stringValue}}/>
         <Text style={styles.titleStyle}>{itemGame.fields.name.stringValue}</Text>
-        <Text style={styles.titleStyle}>{itemGame.fields.description.stringValue}</Text>
+        <Text style={styles.textDescription}>{itemGame.fields.description.stringValue}</Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => close()}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle}>Fermer</Text>
             </Pressable>
           </View>
         </View>
@@ -54,20 +54,23 @@ const styles = StyleSheet.create({
     elevation: 5
   },
   button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2
-  },
-  buttonOpen: {
-    backgroundColor: "#F194FF",
+    borderRadius: 30,
+    padding: 20,
+    elevation: 2,
   },
   buttonClose: {
-    backgroundColor: "#2196F3",
+    backgroundColor: "#525252",
   },
   textStyle: {
     color: "white",
     fontWeight: "bold",
     textAlign: "center"
+  },
+  textDescription: {
+    color: "black",
+    fontSize: 20,
+    textAlign: "center",
+    marginBottom: 20
   },
   modalText: {
     marginBottom: 15,
